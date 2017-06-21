@@ -10,7 +10,9 @@ $(function(){
 //      alert("Error loading reviews")
 //    });
 
-    $.get(this.href).success(function(response){
+    $.get(this.href).success(function(json){
+      $("div.reviews ol").html("") // empties the ol
+
       $("div.reviews").html(response)
     })
 
