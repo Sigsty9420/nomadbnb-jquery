@@ -3,9 +3,11 @@ $(function(){
     $.ajax({
       debugger;
       method: "GET",
-      URL: this.href.json
-    }).done( function(response) {
+      URL: this.href
+    }).success( function(response) {
       $("div.comments").html(response)
+    }).error(function(){
+      alert("Error loading reviews")
     });
 
     e.preventDefault();
