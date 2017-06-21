@@ -10,18 +10,21 @@
       <div class="panel-heading">
         Listings
       </div>
-      <div class="panel-body">
-        <% @rooms.each do |room| %>
-          <div class="row">
-            <div class="col-md-9">
-              <h4><%= link_to room.listing_name, room_path(room) %></h4>
-            </div>
-            <div class="col-md-3"></div>
-              <%= link_to "Update", edit_room_path(room), class: "btn btn-primary" %>
-          </div>
-        <% end %>
+      <div class="panel-body listings">
+
       </div>
     </div>
   </div>
 
 </div>
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $.get("/rooms/listings").success(function(json){
+    var $div = $("div.listings")
+    $div.html("")
+    json.forEach(function(listing){
+      $div.append("<div class='row'><div class='col-md-9'><h4><a href='/rooms/" + listing.id + "'>" + listing.listing_name + "</a></h4></div><div class='cold-md-3'><a class='btn btn-primary' href='/rooms/" + listing.id + "/edit'>Update</a></div></div>")
+    })
+  })
+});
+</script>
