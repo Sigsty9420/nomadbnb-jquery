@@ -2223,3 +2223,184 @@ Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 0.3ms)
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "room_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "I really enjoyed staying here"], ["room_id", 1], ["user_id", 1], ["created_at", "2017-06-21 13:35:07.336204"], ["updated_at", "2017-06-21 13:35:07.336204"]]
   [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 15:38:42 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (47.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (3.1ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 487ms (Views: 432.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:38:56 +0200
+Processing by ReviewsController#index as */*
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html
+  Rendered reviews/index.html (0.2ms)
+Completed 200 OK in 11ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rooms/1/reviews.json" for 127.0.0.1 at 2017-06-21 15:40:21 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 46ms (Views: 22.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rooms/1/reviews.json" for 127.0.0.1 at 2017-06-21 15:40:54 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html
+  Rendered reviews/index.html (0.2ms)
+Completed 200 OK in 56ms (Views: 9.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rooms/1/reviews.json" for 127.0.0.1 at 2017-06-21 15:41:17 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 38ms (Views: 10.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rooms/1/reviews.json" for 127.0.0.1 at 2017-06-21 15:48:05 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 15:48:07 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.1ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 154ms (Views: 131.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:48:08 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:48:12 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:48:12 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:48:13 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 15:49:38 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.1ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 99ms (Views: 63.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:49:40 +0200
+Processing by ReviewsController#index as JSON
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 15:49:49 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.1ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 114ms (Views: 111.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:49:51 +0200
+Processing by ReviewsController#index as */*
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 15:49:58 +0200
+Processing by ReviewsController#index as HTML
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rooms/1/reviews" for 127.0.0.1 at 2017-06-21 16:15:54 +0200
+Processing by ReviewsController#index as */*
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-06-21 16:16:06 +0200
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered rooms/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navbar.html.erb (1.5ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 62ms (Views: 59.3ms | ActiveRecord: 0.5ms)
+
+

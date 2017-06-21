@@ -11,9 +11,12 @@ $(function(){
 //    });
 
     $.get(this.href).success(function(json){
-      $("div.reviews ol").html("") // empties the ol
+      var $ol = $("div.reviews ol")
+      $ol.html("") // empties the ol
+      json.forEach(function(review){
+        $ol.append("<li>" + review.content + "</li>")
+      })
 
-      $("div.reviews").html(response)
     })
 
     e.preventDefault();
