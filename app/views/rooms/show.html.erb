@@ -91,17 +91,20 @@ $(function(){
   })
 
   $("#new_review").on("submit", function(e){
-    url = this.action
 
-    $.post(url)
-
-
+    $.ajax({
+      type: "POST",
+      url: this.action,
+      data: $(this).serialize(),
+      success: function(response){
+        $('input[name=commit]').attr('disabled', false);
+        $("#review_content").val(" ")
+        var $ol = $("div.reviews ol")
+        $ol.append(response);
+      }
+    })
 
     e.preventDefault();
-
-
-
-
   })
 
 })

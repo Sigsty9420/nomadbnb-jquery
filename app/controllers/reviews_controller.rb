@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     @review = @room.reviews.build(review_params)
     @review.user_id = current_user.id
     if @review.save
-      redirect_to @room
+      render "reviews/show", :layout => false
     else
       render "rooms/"
     end
