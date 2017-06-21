@@ -67,7 +67,7 @@
       </div>
 
         <h4>Leave a review</h4>
-        <%= form_for(@review, :url => room_reviews_path(@room)) do |f|%>
+        <%= form_for([@room, @review]) do |f|%>
           <%= f.text_area :content %>
           <p><%= f.submit %></p>
         <% end %>
@@ -88,6 +88,14 @@ $(function(){
     })
 
     e.preventDefault();
+  })
+
+  $("#new_review").on("submit", function(e){
+    alert("Yooooooooo")
+
+    e.preventDefault();
+
+
   })
 
 })

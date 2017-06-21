@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @room
     else
-      redirect_to @room
+      render "rooms/"
     end
   end
 
