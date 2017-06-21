@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <%= @room.user.username %>
+          </div>
+
+          <div class="col-md-9">
+            <h4><%= @room.listing_name %></h4>
+            <%= @room.address %>
+
+            <div class="row text-center row-space-1">
+              <div class="col-sm-3">
+                  <i class="fa fa-home fa-2x"></i>
+              </div>
+              <div class="col-sm-3">
+                  <i class="fa fa-users fa-2x"></i>
+              </div>
+              <div class="col-sm-3">
+                  <i class="fa fa-bed fa-2x"></i>
+              </div>
+              <div class="col-sm-3">
+                  <i class="fa fa-ship fa-2x"></i>
+              </div>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-sm-3">
+                <%= @room.home_type %>
+              </div>
+              <div class="col-sm-3">
+                <%= @room.capacity %>
+                <%= @room.capacity > 1? "Guests" : "Guest" %>
+              </div>
+              <div class="col-sm-3">
+                <%= @room.bed_rooms %>
+                <%= @room.bed_rooms > 1? "Bedrooms" : "Bedroom" %>
+              </div>
+              <div class="col-sm-3">
+                <%= @room.bath_rooms %>
+                <%= @room.bath_rooms > 1? "Bathrooms" : "Bathroom" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="row text-center">
+        <%= link_to "Create new reservation", new_room_reservation_path(@room), class: "btn btn-primary"  %>
+    </div>
+    </br>
+    <div class="row text-center">
+        <%= link_to "See all reservations", room_reservations_path(@room), class: "btn btn-primary"  %>
+    </div>
+    </div>
+</div>

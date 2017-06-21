@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Create a new reservation
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <%= form_for([@room, @room.reservations.new]) do |f| %>
+
+            <label>Check in</label>
+            <%= f.date_field :start_date, class: "form-control" %></br>
+
+            <label>Check out</label>
+            <%= f.date_field :end_date, class: "form-control" %></br>
+
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.hidden_field :price, value: @room.price %>
+            </br>
+            <%= f.submit "Book Now", class: "btn btn-primary" %>
+          <% end %>
+       </div>
+      </div>
+    </div>
+</div>

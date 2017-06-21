@@ -1,0 +1,18 @@
+<div class="row">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      All Listings
+    </div>
+    <div class="panel-body">
+      <% @rooms.each do |room| %>
+        <div class="row">
+          <div class="col-md-12">
+            <h4><%= listing_link room %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
