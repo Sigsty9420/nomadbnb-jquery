@@ -19,11 +19,22 @@
 </div>
 <script type="text/javascript" charset="utf-8">
 $(function () {
+  class Listing {
+    constructor(json) {
+      this.id = json.id
+      this.name = json.listing_name
+    }
+
+    divMaker() {
+      return "<div class='row'><div class='col-md-9'><h4><a href='/rooms/" + this.id + "'>" + this.name + "</a></h4></div><div class='cold-md-3'><a class='btn btn-primary' href='/rooms/" + this.id + "/edit'>Update</a></div></div>"
+    }
+  }
   $.get("/rooms/listings").success(function(json){
     var $div = $("div.listings")
     $div.html("")
     json.forEach(function(listing){
-      $div.append("<div class='row'><div class='col-md-9'><h4><a href='/rooms/" + listing.id + "'>" + listing.listing_name + "</a></h4></div><div class='cold-md-3'><a class='btn btn-primary' href='/rooms/" + listing.id + "/edit'>Update</a></div></div>")
+      var listingVar = new Listing(listing)
+      $div.append(listingVar.divMaker())
     })
   })
 });

@@ -65,10 +65,16 @@
         <ol>
         </ol>
       </div>
+      <form>
+        <h4>Leave a review</h4>
+        <textarea></textarea>
+        <p><input type="submit"><p>
+      </form>
     </div>
 </div>
 <script>
 $(function(){
+
   $("a.load_reviews").on("click", function(e){
 
     $.getJSON(this.href).success(function(json){

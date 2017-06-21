@@ -4061,3 +4061,316 @@ Processing by RoomsController#show as JSON
 Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/rooms/1.json" for 127.0.0.1 at 2017-06-21 17:53:46 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (41.57ms)
+Completed 200 OK in 147ms (Views: 91.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 18:12:32 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.4ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 279ms (Views: 276.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 18:12:40 +0200
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (2.83ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 18:12:47 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (1.9ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 18:12:53 +0200
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (3.71ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-21 18:13:09 +0200
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering static/home.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static/home.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_navbar.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 89ms (Views: 83.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2017-06-21 18:13:12 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.6ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-06-21 18:13:22 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.4ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 59ms (Views: 54.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-06-21 18:13:29 +0200
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navbar.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rooms/listings" for 127.0.0.1 at 2017-06-21 18:13:29 +0200
+Processing by RoomsController#listings as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.18ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 18:13:31 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.4ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 18:13:37 +0200
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (2.77ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rooms/1.json" for 127.0.0.1 at 2017-06-21 18:16:24 +0200
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (3.1ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-21 19:57:23 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering static/home.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static/home.html.erb within layouts/application (54.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 360ms (Views: 302.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-06-21 19:57:32 +0200
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 57ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rooms/listings" for 127.0.0.1 at 2017-06-21 19:57:32 +0200
+Processing by RoomsController#listings as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (39.21ms)
+Completed 200 OK in 69ms (Views: 65.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 19:57:41 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.0ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 53ms (Views: 51.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/listings" for 127.0.0.1 at 2017-06-21 19:57:45 +0200
+Processing by RoomsController#listings as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.89ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rooms/1/edit" for 127.0.0.1 at 2017-06-21 19:57:46 +0200
+Processing by RoomsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/edit.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "cities"."country" FROM "cities"[0m
+  Rendered rooms/_form.html.erb (16.8ms) [cache miss]
+  Rendered rooms/edit.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_navbar.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 72ms (Views: 62.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/rooms/listings" for 127.0.0.1 at 2017-06-21 19:57:48 +0200
+Processing by RoomsController#listings as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 2]]
+[active_model_serializers] No serializer found for resource: #<Reservation id: 1, user_id: 1, room_id: 2, start_date: "2017-06-30 00:00:00", end_date: "2017-07-31 00:00:00", price: 50000, total: nil, created_at: "2017-06-21 09:24:25", updated_at: "2017-06-21 09:24:25">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.88ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 19:57:54 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.4ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 63ms (Views: 61.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 19:58:21 +0200
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (3.82ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 19:58:43 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.4ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 19:59:08 +0200
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered rooms/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.6ms) [cache miss]
+  Rendered layouts/_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2017-06-21 19:59:19 +0200
+Processing by RoomsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 1]]
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (3.46ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
