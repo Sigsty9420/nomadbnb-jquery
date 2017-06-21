@@ -1,6 +1,12 @@
 $(function(){
   $("a.load_reviews").on("click", function(e){
-    alert("You clicked this link")
+    $.ajax({
+      method: "GET",
+      URL: this.href
+    }).done( function(data) {
+      console.log(data)
+    });
+
     e.preventDefault();
   })
 })
