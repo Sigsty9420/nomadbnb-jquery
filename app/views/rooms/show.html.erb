@@ -91,9 +91,15 @@ $(function(){
   })
 
   $("#new_review").on("submit", function(e){
-    alert("Yooooooooo")
+    url = this.action
+
+    $.post(url)
+
+
 
     e.preventDefault();
+
+
 
 
   })
