@@ -65,14 +65,13 @@
         <ol>
         </ol>
       </div>
-      <form>
-        <h4>Leave a review</h4>
-        <%= form_for(@review) do |f|%>
 
+        <h4>Leave a review</h4>
+        <%= form_for(@review, :url => room_reviews_path(@room)) do |f|%>
+          <%= f.text_area :content %>
+          <p><%= f.submit %></p>
         <% end %>
-        <textarea></textarea>
-        <p><input type="submit"><p>
-      </form>
+
     </div>
 </div>
 <script>

@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @review = @room.review.build
+    @review = @room.reviews.build
     respond_to do |format|
       format.html { render :show}
       format.json { render json: @room}
