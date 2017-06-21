@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get '/rooms/listings', to: 'rooms#listings'
   resources :cities
   resources :rooms
   devise_for :users,
@@ -18,5 +20,6 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create, :index, :show]
     resources :reviews, only: [:new, :create, :index, :show]
   end
+
 
 end

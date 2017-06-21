@@ -43,6 +43,11 @@ class RoomsController < ApplicationController
     end
   end
 
+  def listings
+    @listings = current_user.rooms
+    render json: @listings
+  end
+
   private
 
   def room_params
