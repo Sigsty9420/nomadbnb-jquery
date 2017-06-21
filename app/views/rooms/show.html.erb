@@ -59,7 +59,7 @@
     </div>
     </br>
     <div class="row text-center">
-        <%= link_to "See all reviews", room_reviews_path(@room), class: "load_reviews btn btn-primary"  %>
+        <%= link_to "See all reviews", room_path(@room), class: "load_reviews btn btn-primary"  %>
     </div>
       <div class="reviews">
         <ol>
@@ -71,10 +71,10 @@
 $(function(){
   $("a.load_reviews").on("click", function(e){
 
-    $.get(this.href).success(function(json){
+    $.getJSON(this.href).success(function(json){
       var $ol = $("div.reviews ol")
       $ol.html("") // empties the ol
-      json.forEach(function(review){
+      json.reviews.forEach(function(review){
         $ol.append("<li>" + review.content + "</li>")
       })
     })
