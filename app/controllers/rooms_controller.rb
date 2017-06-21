@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     @rooms = current_user.rooms
     respond_to do |format|
       format.html { render :index}
-      format.json { render json: @rooms.to_json(only: [:listing_name]) }
+      format.json { render json: @rooms}
     end
   end
 
