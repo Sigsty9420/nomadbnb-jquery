@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :rooms
   has_many :cities, through: :rooms
   has_many :reservations
+  has_many :reviews
   validates :username, presence: true, length: {maximum: 30}
 
   def self.from_omniauth(auth)

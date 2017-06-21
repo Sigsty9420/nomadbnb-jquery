@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :reviews
   resources :cities
   resources :rooms
   devise_for :users,
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :rooms do
     resources :reservations, only: [:new, :create, :index, :show]
+    resources :reviews, only: [:new, :create, :index, :show]
   end
 
 end

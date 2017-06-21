@@ -2,6 +2,7 @@ class Room < ApplicationRecord
   belongs_to :user
   belongs_to :city
   has_many :reservations
+  has_many :reviews
 
   validates :home_type, presence: true
   validates :room_type, presence: true
