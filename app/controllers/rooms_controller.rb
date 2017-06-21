@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { render :index}
+      format.html { render :show}
       format.json { render json: @room}
     end
   end
