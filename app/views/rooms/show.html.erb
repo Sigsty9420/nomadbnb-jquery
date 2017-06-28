@@ -83,12 +83,34 @@ $(function(){
       var $ol = $("div.reviews ol")
       $ol.html("") // empties the ol
       json.reviews.forEach(function(review){
-        $ol.append("<li>" + review.content + "</li>")
+        if (review.user_id === <%= current_user.id %>){
+          $ol.append(
+            `<li>
+              ${review.content}
+              <button
+                id="delete_review"
+                data-review-id="${review.id}"
+                data-room-id="${review.room_id}"
+              >
+                Delete
+              </button>
+            </li>`
+          )
+        } else {
+          $ol.append(`<li>${review.content}</li>`)
+        }
+        $("#delete_review").on("click", function(e){
+
+          e.preventDefault();
+          debugger;
+        })
       })
     })
 
     e.preventDefault();
   })
+
+
 
   $("#new_review").on("submit", function(e){
 
