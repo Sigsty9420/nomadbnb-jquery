@@ -20,8 +20,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    @reviews = @room.reviews
-    render json: @reviews
+    render json: { message: 'success', status: :ok }
   end
 
   private

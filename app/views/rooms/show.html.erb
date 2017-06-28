@@ -111,28 +111,8 @@ $(function(){
       $.ajax({
         type: "DELETE",
         url: `/rooms/${this.dataset.roomId}/reviews/${this.dataset.reviewId}`,
-        success: function(json){
-          var $ol = $("div.reviews ol")
-          $ol.html("") // empties the ol
-          json.forEach(function(review){
-            if (review.user_id === <%= current_user.id %>){
-              $ol.append(
-                `<li>
-                  ${review.content}
-                  <button
-                    class="delete_review"
-                    data-review-id="${review.id}"
-                    data-room-id="${review.room_id}"
-                  >
-                    Delete
-                  </button>
-                </li>`
-              )
-            } else {
-              $ol.append(`<li>${review.content}</li>`)
-            }
-            bindDeleteReviewEventListeners();
-          })
+        success: function(){
+          $(e.target).closest('li').remove();
         }
       })
       e.preventDefault();
