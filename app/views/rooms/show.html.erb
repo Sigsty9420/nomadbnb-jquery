@@ -83,12 +83,62 @@ $(function(){
       var $ol = $("div.reviews ol")
       $ol.html("") // empties the ol
       json.reviews.forEach(function(review){
-        $ol.append("<li>" + review.content + "</li>")
+        if (review.user_id === <%= current_user.id %>){
+          $ol.append(
+            `<li>
+              ${review.content}
+              <button
+                class="delete_review"
+                data-review-id="${review.id}"
+                data-room-id="${review.room_id}"
+              >
+                Delete
+              </button>
+            </li>`
+          )
+        } else {
+          $ol.append(`<li>${review.content}</li>`)
+        }
+        bindDeleteReviewEventListeners();
       })
     })
 
     e.preventDefault();
   })
+
+  function bindDeleteReviewEventListeners() {
+    $("button.delete_review").on("click", function(e){
+      $.ajax({
+        type: "DELETE",
+        url: `/rooms/${this.dataset.roomId}/reviews/${this.dataset.reviewId}`,
+        success: function(json){
+          var $ol = $("div.reviews ol")
+          $ol.html("") // empties the ol
+          json.forEach(function(review){
+            if (review.user_id === <%= current_user.id %>){
+              $ol.append(
+                `<li>
+                  ${review.content}
+                  <button
+                    class="delete_review"
+                    data-review-id="${review.id}"
+                    data-room-id="${review.room_id}"
+                  >
+                    Delete
+                  </button>
+                </li>`
+              )
+            } else {
+              $ol.append(`<li>${review.content}</li>`)
+            }
+            bindDeleteReviewEventListeners();
+          })
+        }
+      })
+      e.preventDefault();
+
+    })
+  }
 
   $("#new_review").on("submit", function(e){
 
@@ -101,7 +151,9 @@ $(function(){
         $("#review_content").val(" ")
         var $ol = $("div.reviews ol")
         $ol.append(response);
+        bindDeleteReviewEventListeners();
       }
+
     })
 
     e.preventDefault();
