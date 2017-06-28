@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_room, only: [:create]
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
 
   def create
@@ -16,11 +16,6 @@ class ReviewsController < ApplicationController
   def index
     @reviews = current_user.reviews
     render json: @reviews
-  end
-
-  def destroy
-    @review.destroy
-    render status: :ok
   end
 
   private

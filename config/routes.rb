@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :rooms do
     resources :reservations, only: [:new, :create, :index, :show]
-    resources :reviews, only: [:new, :create, :index, :show, :destroy]
+    resources :reviews, only: [:new, :create, :index, :show]
   end
 
 
